@@ -6,19 +6,21 @@ use_frameworks!
 
 def shared_pods
     pod 'ReactiveCocoa'
-
-    # API
-    pod 'Alamofire'
-    pod 'ObjectMapper'
-
 end
 
 target 'MVCache' do
     shared_pods
+    pod 'MVCacheCore', :path => './'
+end
+
+target 'MVCacheCore' do
+    shared_pods
+
+    # API
+    pod 'Alamofire'
 end
 
 def test_pods
     pod 'Quick'
     pod 'Nimble'
-    pod 'Mockingjay', '~> 1.1.1'
 end
